@@ -1,0 +1,133 @@
+.app-container {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.light-theme {
+    background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+    color: #2d3748;
+}
+
+.dark-theme {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: #e2e8f0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+
+.dark-theme .title {
+    background: linear-gradient(135deg, #0dcaf0, #0aa8c0);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: 1.2rem;
+    color: #718096;
+}
+
+.dark-theme .loading {
+    color: #a0aec0;
+}
+
+.error {
+    background-color: rgba(229, 62, 62, 0.1);
+    color: #e53e3e;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.dark-theme .error {
+    background-color: rgba(229, 62, 62, 0.2);
+}
+
+/* Animation for weather card appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weather-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 1rem 0;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .loading {
+        font-size: 1rem;
+    }
+
+    .error {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+
+  
